@@ -53,8 +53,13 @@ for (let i = 0; i < count; i++) {
     dummy.position.set(5 * (i / count - 0.5), 0, 0);
     dummy.updateMatrix();
     mesh.setMatrixAt(i, dummy.matrix);
-}
 
+    offset[i] = Math.random();
+    speed[i] = 0.5 + 0.5 * Math.random();
+}
+// set attributes for the instanced mesh for speed and offset
+instanceGeometry.setAttribute('offset', new THREE.InstancedBufferAttribute(offset, 1, false));
+instanceGeometry.setAttribute('speed', new THREE.InstancedBufferAttribute(speed, 1, false));
 /**
  * Sizes
  */
