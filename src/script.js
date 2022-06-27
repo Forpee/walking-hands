@@ -23,7 +23,7 @@ const scene = new THREE.Scene();
 // Geometry
 let count = 3;
 
-const geometry = new THREE.PlaneBufferGeometry(0.1, 0.1, 32, 32);
+const geometry = new THREE.PlaneBufferGeometry(0.8, 0.8, 32, 32);
 
 // Material
 const material = new THREE.ShaderMaterial({
@@ -33,7 +33,8 @@ const material = new THREE.ShaderMaterial({
     },
     vertexShader: vertexShader,
     fragmentShader: fragmentShader,
-    side: THREE.DoubleSide
+    side: THREE.DoubleSide,
+    transparent: true,
 });
 
 // Mesh
