@@ -29,6 +29,8 @@ let instanceGeometry = new THREE.InstancedBufferGeometry();
 
 THREE.BufferGeometry.prototype.copy.call(instanceGeometry, geometry);
 
+let offset = new Float32Array(count);
+let speed = new Float32Array(count);
 // Material
 const material = new THREE.ShaderMaterial({
     uniforms: {
@@ -42,7 +44,7 @@ const material = new THREE.ShaderMaterial({
 });
 
 // Mesh
-const mesh = new THREE.InstancedMesh(geometry, material, count);
+const mesh = new THREE.InstancedMesh(instanceGeometry, material, count);
 scene.add(mesh);
 
 let dummy = new THREE.Object3D();
