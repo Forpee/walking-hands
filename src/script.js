@@ -39,6 +39,14 @@ const material = new THREE.ShaderMaterial({
 const mesh = new THREE.InstancedMesh(geometry, material, count);
 scene.add(mesh);
 
+let dummy = new THREE.Object3D();
+
+for (let i = 0; i < count; i++) {
+    dummy.position.set(1 * (Math.random() - 0.5), 1 * (Math.random() - 0.5), 0);
+    dummy.updateMatrix();
+    mesh.setMatrixAt(i, dummy.matrix);
+}
+
 /**
  * Sizes
  */
