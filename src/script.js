@@ -25,6 +25,10 @@ let count = 10;
 
 const geometry = new THREE.PlaneBufferGeometry(0.5, 0.5, 32, 32);
 
+let instanceGeometry = new THREE.InstancedBufferGeometry();
+
+THREE.BufferGeometry.prototype.copy.call(instanceGeometry, geometry);
+
 // Material
 const material = new THREE.ShaderMaterial({
     uniforms: {
