@@ -21,9 +21,9 @@ const scene = new THREE.Scene();
  * Test mesh
  */
 // Geometry
-let count = 3;
+let count = 300;
 
-const geometry = new THREE.PlaneBufferGeometry(0.8, 0.8, 32, 32);
+const geometry = new THREE.PlaneBufferGeometry(0.5, 0.5, 32, 32);
 
 // Material
 const material = new THREE.ShaderMaterial({
@@ -44,7 +44,7 @@ scene.add(mesh);
 let dummy = new THREE.Object3D();
 
 for (let i = 0; i < count; i++) {
-    dummy.position.set(1 * (Math.random() - 0.5), 1 * (Math.random() - 0.5), 0);
+    dummy.position.set(6 * (Math.random() - 0.5), 6 * (Math.random() - 0.5), 0);
     dummy.updateMatrix();
     mesh.setMatrixAt(i, dummy.matrix);
 }
