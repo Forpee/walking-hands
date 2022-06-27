@@ -29,6 +29,7 @@ const geometry = new THREE.PlaneBufferGeometry(0.1, 0.1, 32, 32);
 const material = new THREE.ShaderMaterial({
     uniforms: {
         uTime: { value: 0 },
+        uSprite: { value: new THREE.TextureLoader().load('/hands-sprite.png') },
     },
     vertexShader: vertexShader,
     fragmentShader: fragmentShader,
