@@ -21,7 +21,7 @@ const scene = new THREE.Scene();
  * Test mesh
  */
 // Geometry
-let count = 10;
+let count = 20;
 
 const geometry = new THREE.PlaneBufferGeometry(0.5, 0.5, 32, 32);
 
