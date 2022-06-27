@@ -5,10 +5,10 @@ varying vec2 vUv;
 
 void main()
 {
-    
+    float time=uTime*20.;
     vec2 offset=vec2(
-        mod(floor(uTime),5.),
-        4.-floor(mod(uTime/5.,5.))
+        mod(floor(time),5.),
+        4.-floor(mod(time/5.,5.))
     );
     vec2 uv1=vUv/5.+offset/5.;
     
