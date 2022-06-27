@@ -21,7 +21,7 @@ const scene = new THREE.Scene();
  * Test mesh
  */
 // Geometry
-let count = 100;
+let count = 200;
 
 const geometry = new THREE.PlaneBufferGeometry(0.5, 0.5, 32, 32);
 
@@ -50,7 +50,7 @@ scene.add(mesh);
 let dummy = new THREE.Object3D();
 
 for (let i = 0; i < count; i++) {
-    dummy.position.set(5 * (i / count - 0.5), 0, 0);
+    dummy.position.set(10 * (i / count - 0.5), 0, 0);
     dummy.updateMatrix();
     mesh.setMatrixAt(i, dummy.matrix);
 
